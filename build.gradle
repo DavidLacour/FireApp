@@ -1,0 +1,24 @@
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+        classpath 'com.google.gms:google-services:4.3.15'
+
+
+        // Import the Firebase BoM
+//        implementation platform('com.google.firebase:firebase-bom:31.2.2')
+        // Add the dependency for the Firebase SDK for Google Analytics
+     //   implementation 'com.google.firebase:firebase-analytics-ktx'
+    }
+    repositories {
+        // Make sure that you have the following two repositories
+        google()  // Google's Maven repository
+        mavenCentral()  // Maven Central repository
+    }
+
+}// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '7.4.1' apply false
+    id 'com.android.library' version '7.4.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+}
