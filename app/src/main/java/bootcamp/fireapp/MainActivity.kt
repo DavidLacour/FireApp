@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     fun get(view: View) {
         updateEmailAndPhone()
-        db.child(phone.text.toString()).get().addOnSuccessListener {
+        db.child(PHONE_NB).get().addOnSuccessListener {
             if (it.value == null) future.completeExceptionally(NoSuchFieldException())
             else future.complete(it.value as String)
         }.addOnFailureListener {
@@ -45,14 +45,9 @@ class MainActivity : AppCompatActivity() {
 
     fun set(view: View) {
         updateEmailAndPhone()
-        println("hey")
-        db.child(PHONE_NB).setValue(EMAIL)
-        // Write a message to the database
-        // Write a message to the database
-        val database = FirebaseDatabase.getInstance()
-        val myRef = database.getReference("message")
 
-        myRef.setValue("Hello, World!")
+        db.child(PHONE_NB).setValue(EMAIL)
+
     }
 
     fun updateEmailAndPhone() {
